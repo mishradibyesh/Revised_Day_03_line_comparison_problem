@@ -5,7 +5,6 @@ public class Line_Comparison {
 	static double length1;
 	static double length2;	
 	public static void main(String[] args) {
-		Line_Comparison obj = new Line_Comparison();
 		input();
 		checkEquality() ;
 		compare();
