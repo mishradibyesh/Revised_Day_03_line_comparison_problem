@@ -2,7 +2,15 @@ package com.bl.linecomparison;
 import java.lang.*;
 import java.util.Scanner;
 public class Line_Comparison {
+	static double length1;
+	static double length2;	
 	public static void main(String[] args) {
+		Line_Comparison obj = new Line_Comparison();
+		input();
+		checkEquality() ;
+		compare();
+	}
+	public static void input() {
 		System.out.println("Welcome to Line Comparison Computation Program");
 		// making object of Scanner class
 		System.out.println("enter the co-ordinates for first line");
@@ -17,8 +25,7 @@ public class Line_Comparison {
 		//printing the co-ordinates in well defined manner
 		System.out.println("the first co-ordinate is (" +x1 +","+y1+") ");
 		System.out.println("the second co-ordinate is (" +x2 +","+y2+") ");
-		double length1;
-		double length2;
+
 		//finding the squares
 		int point1 = (x2-x1)*(x2-x1);
 		int point2 = (y2-y1)*(y2-y1);
@@ -41,17 +48,23 @@ public class Line_Comparison {
 		// printing the length of the lines
 		System.out.println("length of the line is "+length1);
 		System.out.println("length of the second line is "+length2);
+	}
+	public static void checkEquality() {
 		// using wrapper class concept
+
 		Double length1new = length1;
 		Double length2new = length2;
-
 		boolean chk=length1new.equals(length2new);    // checking equality using equals method
 		if(chk == true)                                       
 			System.out.println("these two lines are equal");
 		else
 			System.out.println("these two lines are NOT equal");
+	}
 
-		//cheking line 1 is greater lesser or equal to 2nd line
+	public static void compare() {
+		Double length1new = length1;
+		Double length2new = length2;
+		//checking line 1 is greater lesser or equal to 2nd line
 		int compare = length1new.compareTo(length2new);
 		if(compare < 0) {
 			System.out.println("line1 is lesser than other line2 ");
